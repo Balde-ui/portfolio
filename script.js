@@ -38,7 +38,7 @@ mobileLinks.forEach((link) => {
 const typewriter = document.getElementById("typewriter");
 const texts = [
   "Développeur Web Full-Stack",
-  "Étudiant en Licence MIAGE",
+  "Étudiant",
   "Passionné de Technologies",
   "Créateur d'Expériences Web",
 ];
