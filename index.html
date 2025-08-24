@@ -5,85 +5,455 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Ajout de Font Awesome pour les icônes -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
   </head>
   <body>
-    <nav class="navbar">
-      <h1>Mon Portfolio</h1>
-      <ul class="nav-links">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-      </ul>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          Balde
+        </div>
+
+        <!-- Menu desktop -->
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">Accueil</a></li>
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#skills" class="nav-link">Compétences</a></li>
+          <li><a href="#projects" class="nav-link">Projets</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Menu mobile -->
+        <ul class="nav-links mobile" id="mobileMenu">
+          <li><a href="#hero" class="nav-link">Accueil</a></li>
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#skills" class="nav-link">Compétences</a></li>
+          <li><a href="#projects" class="nav-link">Projets</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Burger menu -->
+        <div class="burger-menu" id="burgerMenu">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </div>
+      </div>
     </nav>
 
-    <section id="about" class="section fade-in">
-      <h2>À propos de moi</h2>
-      <div class="about-container">
-        <img src="Moi.jpeg" alt="Photo de profil" class="profile-pic" />
-        <p>
-          Bonjour ! Je suis Baldé Alhassane, je suis un passionné de
-          développement web, de développement d'applications, de réseau,... En
-          quelque sorte j'aime tout ce qui touche à l'informatique. Pour moi
-          être informaticien c'est être capable d'apporter des solutions aux
-          différents défis que nous rencontrons au quotidien. Je possède pas mal
-          de connaissances allant de l'administration réseau & système, de
-          programmer des applications web ainsi que des solutions web. J'aime
-          apprendre et j'espère continuer en ce sens et être compétent
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-greeting">Bienvenue, je suis</div>
+          <h1 class="hero-name">Balde Alhassane</h1>
+          <div class="typewriter" id="typewriter"></div>
+          <p class="hero-description">
+            Étudiant en Licence MIAGE à l'Université Dakar Bourguiba, je suis passionné par le développement web et la création d'applications modernes. 
+            J'aime apprendre, expérimenter et trouver des solutions pratiques aux défis numériques. 
+            Je développe mes compétences tout en gardant une approche créative et dynamique.
+            </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="cta-button primary">
+              <i class="fas fa-rocket"></i>
+              Voir mes projets
+            </a>
+            <a href="#contact" class="cta-button">
+              <i class="fas fa-envelope"></i>
+              Me contacter
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-container">
+            <div class="profile-image">
+               <img src="Moi.jpeg" alt="Photo de profil" class="profile-pic" />
+            </div>
+            <div class="floating-icons">
+              <div class="floating-icon"><i class="fab fa-js-square"></i></div>
+              <div class="floating-icon"><i class="fab fa-angular"></i></div>
+              <div class="floating-icon"><i class="fab fa-python"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      class="section"
+      id="about"
+      style="
+        background: var(--white);
+        margin-top: 0;
+        border-radius: 30px 30px 0 0;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+      "
+    >
+      <div class="section-header">
+        <h2 class="section-title">À propos de moi</h2>
+        <p class="section-subtitle">
+          Découvrez mon parcours, mes passions et ma vision du développement web
         </p>
       </div>
-      <!-- Ajout des contacts avec icônes -->
-      <div class="contact-links">
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+  Actuellement étudiant en 3ᵉ année de 
+  <span class="highlight">Licence MIAGE</span> à l'Université Dakar Bourguiba 
+  et passionné par le <span class="highlight">développement web et les applications</span>.
+</p>
+<p>
+  À travers mes <span class="highlight">projets personnels et universitaires</span>, 
+  j’ai appris à créer des solutions <span class="highlight">pratiques, esthétiques et performantes</span>. 
+  J’adore relever des défis, apprendre de nouvelles technologies et transformer des idées en projets concrets.
+</p>
+<p>
+  Je développe avec des technologies comme 
+  <span class="highlight">Laravel, Django, Angular, Java et MySQL</span>, 
+  et je continue chaque jour à <span class="highlight">me perfectionner et explorer de nouvelles opportunités</span>.
+</p>
+
+          <p>
+            Mon objectif est de
+            <span class="highlight">construire des solutions innovantes</span>
+            et de contribuer au développement technologique avec
+            <span class="highlight"
+              >enthousiasme, détermination et créativité</span
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills" style="background: var(--light-gray)">
+      <div class="section-header">
+        <h2 class="section-title">Mes Compétences</h2>
+        <p class="section-subtitle">
+          Une expertise technique diversifiée pour des projets web complets
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="skill-title">Frontend</h3>
+          <ul class="skill-list">
+            <li class="skill-item">HTML5 & CSS3</li>
+            <li class="skill-item">JavaScript ES6+</li>
+            <li class="skill-item">Angular</li>
+            <li class="skill-item">Bootstrap</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="skill-title">Backend</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Python</li>
+            <li class="skill-item">PHP</li>
+            <li class="skill-item">Laravel</li>
+            <li class="skill-item">Django</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="skill-title">Base de données</h3>
+          <ul class="skill-list">
+            <li class="skill-item">MySQL</li>
+            <li class="skill-item">PostgreSQL</li>
+            <li class="skill-item">MongoDB</li>
+            <li class="skill-item">SQLite</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="skill-title">Outils & DevOps</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Git & GitHub</li>
+            <li class="skill-item">Docker</li>
+            <li class="skill-item">Linux</li>
+            <li class="skill-item">VS Code</li>
+            <li class="skill-item">Postman</li>
+            <li class="skill-item">Figma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects" style="background: var(--white)">
+      <div class="section-header">
+        <h2 class="section-title">Mes Projets</h2>
+        <p class="section-subtitle">
+          Découvrez quelques-uns de mes projets les plus récents et innovants
+        </p>
+      </div>
+
+      <div class="projects-grid">
+  <!-- Projet 1 : Application Gestion de Pharmacie -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-pills"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Gestion de Pharmacie</h3>
+      <p class="project-description">
+        Application complète de gestion de pharmacie avec inventaire, suivi des stocks et alertes de réapprovisionnement.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+        <span class="tech-badge">Django</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projet 2 : Site Web Université -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-university"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Site Web Université Dakar Bourguiba</h3>
+      <p class="project-description">
+        Site institutionnel moderne pour l'université, avec informations sur les formations, actualités et événements.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">Bootstrap</span>
+        <span class="tech-badge">Angular</span>
+        <span class="tech-badge">Laravel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projet 3 : Gestion de Scolarité -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-school"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Gestion de Scolarité</h3>
+      <p class="project-description">
+        Application web pour gérer les étudiants, les notes et les cours, avec interface admin et utilisateur.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Laravel</span>
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projet 4 : Mini Blog -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-blog"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Mini Blog</h3>
+      <p class="project-description">
+        Blog interactif avec ajout d'articles, commentaires et navigation fluide.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projet 5 : Carnet d'Adresse -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-address-book"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Carnet d'Adresse</h3>
+      <p class="project-description">
+        Gestion complète des contacts avec interface web simple et intuitive.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projet 6 : Portfolio -->
+  <div class="project-card">
+    <div class="project-image">
+      <i class="fas fa-laptop-code"></i>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Portfolio Personnel</h3>
+      <p class="project-description">
+        Site de présentation moderne et responsif pour mettre en valeur mes projets et compétences.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">Bootstrap</span>
+        <span class="tech-badge">JavaScript</span>
+         <span class="tech-badge">Angular</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-chart-line"></i>
+          </div> -->
+          <!-- <div class="project-content">
+            <h3 class="project-title">Dashboard Analytics</h3>
+            <p class="project-description">
+              Tableau de bord interactif pour visualiser des données
+              statistiques avec graphiques dynamiques, filtres avancés et
+              exports de données.
+            </p>
+            <div class="project-tech">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">D3.js</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">Chart.js</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      class="section"
+      id="contact"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--light-gray) 0%,
+          var(--white) 100%
+        );
+      "
+    >
+      <div class="section-header">
+        <h2 class="section-title">Me Contacter</h2>
+        <p class="section-subtitle">
+          N'hésitez pas à me contacter pour discuter de vos projets ou
+          opportunités
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <a href="mailto:hssanebalde98@gmail.com" class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="contact-title">Email</h3>
+          <p class="contact-value">hssanebalde98@gmail.com</p>
+        </a>
+
+        <a href="tel:+221784448214" class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3 class="contact-title">Téléphone</h3>
+          <p class="contact-value">+221 78 444 82 14</p>
+        </a>
+
+        <!-- <a
+          href="https://linkedin.com/in/balde-alhassane"
+          class="contact-item"
+          target="_blank"
+        >
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <h3 class="contact-title">LinkedIn</h3>
+          <p class="contact-value">balde-alhassane</p>
+        </a> -->
+
         <a
           href="https://github.com/Balde-ui"
+          class="contact-item"
           target="_blank"
-          class="contact-link"
         >
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="tel:+221784448214" class="contact-link">
-          <i class="fas fa-phone"></i> +221 78 444 8214
-        </a>
-        <a href="mailto:hssanebalde98@gmail.com" class="contact-link">
-          <i class="fas fa-envelope"></i> hssanebalde98@gmail.com
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <h3 class="contact-title">GitHub</h3>
+          <p class="contact-value">Balde-ui</p>
         </a>
       </div>
     </section>
 
-    <section id="skills" class="section fade-in">
-      <h2>Compétences</h2>
-      <ul>
-        <li>HTML5, CSS3(bases)</li>
-        <li>JavaScript (Intermédiaire)</li>
-        <li>Java (Intermédiaire)</li>
-        <li>Git & GitHub (Base)</li>
-        <li>Python (Intermédiaire)</li>
-        <li>PHP (Intermédiaire)</li>
-      </ul>
-    </section>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <section id="projects" class="section fade-in">
-      <h2>Projets</h2>
-      <div class="project">
-        <h3>Mini Blog</h3>
-        <p>
-          Un petit blog en HTML/CSS avec quelques interactions en JavaScript.
-        </p>
-      </div>
-      <div class="project">
-        <h3>Portfolio</h3>
-        <p>Le site que vous consultez actuellement.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 BaldeCorp - Tous droits réservés</p>
-    </footer>
-
+    <!-- Footer -->
+    <!-- <footer
+      style="
+        background: var(--dark-gray);
+        color: var(--white);
+        text-align: center;
+        padding: 2rem 1rem;
+      "
+    >
+      <p>&copy; 2025 Balde Alhassane. Tous droits réservés.</p>
+      <p style="opacity: 0.8; margin-top: 0.5rem">Développé par moi-même</p>
+    </footer> --> 
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personnalisé -->
     <script src="script.js"></script>
   </body>
 </html>
